@@ -1,37 +1,25 @@
-/* Dark Mode Aesthetic - Clean GitHub-inspired */
+/* PDF.ai inspired Aesthetic with Flat Design */
 body {
   margin: 0;
   padding: 0;
-  background: #0d1117; 
-  color: #e6edf3;
-  font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f5f4f0; /* Light cream/off-white background like PDF.ai first screenshot */
+  color: #333333;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.6;
 }
 
 .app {
   max-width: 1200px;
   margin: 20px auto;
-  padding: 20px 30px;
-  background: transparent;
-  border: 1px solid #30363d;
-  border-radius: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  color: #e6edf3;
-}
-
-.app-header, .input-section, .example-section, .svg-flowchart-container {
-  background: #161b22;
-  border-radius: 8px;
-  border: 1px solid #30363d;
-  padding: 15px;
-  margin-bottom: 20px;
+  padding: 30px;
+  background: transparent; /* Remove the white background for a flat look */
+  color: #333333;
 }
 
 .app-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   padding: 20px 15px;
-  background: transparent;
-  border: none;
 }
 
 /* Logo styling */
@@ -39,12 +27,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .logo {
-  margin-right: 10px;
-  filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.5));
+  margin-right: 15px;
 }
 
 .logo-text {
@@ -53,101 +40,86 @@ body {
 
 .logo-text h1 {
   margin: 0;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.1;
-  letter-spacing: -0.5px;
-  color: #ffffff;
+  color: #333333;
 }
 
 .app-header p {
-  color: #8b949e; /* GitHub muted text */
-  margin-top: 10px;
+  color: #666666;
+  margin-top: 15px;
+  font-size: 18px;
 }
 
 .app-main {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 40px;
 }
 
+/* Input Section - Flat style */
 .input-section {
   width: 100%;
+  background: transparent;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 40px;
 }
 
-.output-section {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-@media (min-width: 992px) {
-  .output-section {
-    flex-direction: column;
-  }
-  
-  .xml-section, .diagram-section {
-    width: 100%;
-    margin-bottom: 30px;
-  }
-  
-  .diagram-section {
-    margin-bottom: 0;
-  }
-}
-
-/* Input section */
-.input-section h2, .diagram-section h2, .example-section h2 {
-  color: #ffffff;
+.input-section h2, .diagram-section h2 {
+  color: #333333;
   font-weight: 600;
-  font-family: 'Inter', 'Poppins', sans-serif;
-  letter-spacing: -0.5px;
-  font-size: 22px;
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
-/* Code section - fix overflow */
+/* Code section */
 .code-input {
-  padding: 10px;
-  background: #161b22;
-  border-radius: 8px;
-  border: 1px solid #30363d;
+  padding: 0;
+  background: transparent;
+  border: none;
 }
 
 .code-input textarea {
   width: 100%;
   box-sizing: border-box;
   padding: 15px;
-  border: 1px solid #30363d;
-  border-radius: 6px;
-  background: #0d1117;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
   font-family: 'Fira Code', monospace;
   font-size: 14px;
   line-height: 1.5;
-  tab-size: 2;
   min-height: 300px;
-  color: #e6edf3;
+  color: #333333;
 }
 
-/* Buttons - More subtle blue */
+/* Mode description */
+.mode-description {
+  color: #666666;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* PDF.ai-style Buttons */
 .code-input button, 
-.xml-actions button, 
-.xml-actions .open-drawio-btn,
-.svg-download-btn {
-  padding: 10px 20px;
-  background: #2188ff;
+.svg-download-btn,
+.png-download-btn {
+  padding: 12px 32px;
+  background: #FF7E55; /* PDF.ai orange */
   color: white;
   border: none;
   border-radius: 6px;
   font-weight: 500;
+  font-size: 16px;
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .code-input button:hover, 
-.xml-actions button:hover, 
-.xml-actions .open-drawio-btn:hover,
-.svg-download-btn:hover {
-  background: #1c7ed6;
+.svg-download-btn:hover,
+.png-download-btn:hover {
+  background: #ff6a3d;
   transform: translateY(-2px);
 }
 
@@ -160,184 +132,227 @@ body {
   background-color: #999;
 }
 
-.xml-output {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 20px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+/* Tabs styling in PDF.ai style */
+.tabs-container {
+  margin-bottom: 25px;
 }
 
-.xml-output pre {
-  margin: 0;
-  white-space: pre-wrap;
-  font-family: monospace;
-  font-size: 14px;
+.tabs {
+  display: flex;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.xml-content {
-  max-height: 400px;
-  overflow: auto;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.3);
-  padding: 15px;
-  margin-top: 15px;
+.tab-button {
+  padding: 12px 24px;
+  background: transparent;
+  color: #666666;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
-.diagram-container {
-  padding: 20px;
-  margin: 20px 0;
+.tab-button:hover {
+  color: #333333;
+}
+
+.tab-button.active {
+  color: #FF7E55;
+  border-bottom: 2px solid #FF7E55;
+}
+
+.tab-content {
+  padding: 15px 0;
+}
+
+/* Feature rows - for the "how it works" section */
+.feature-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 60px 0;
+}
+
+.feature-item {
+  flex: 1;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.feature-title {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.feature-description {
+  color: #666;
+  font-size: 16px;
+}
+
+/* Output Section */
+.output-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.diagram-section {
+  background: transparent;
 }
 
 /* Error message */
 .error-message {
-  background-color: rgba(198, 40, 40, 0.2);
-  color: #ff8a80;
-  padding: 10px 15px;
-  border-radius: 4px;
-  border-left: 4px solid #c62828;
+  background-color: #fff2f0;
+  color: #ff4d4f;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border-left: 4px solid #ff4d4f;
 }
 
 /* Footer */
 .app-footer {
-  margin-top: 40px;
+  margin-top: 80px;
   text-align: center;
-  color: #8b949e;
-  font-size: 14px;
+  color: #666666;
+  font-size: 15px;
+  padding: 20px 0;
+  border-top: 1px solid #e0e0e0;
 }
 
 .brand-text {
-  color: #58A6FF;
+  color: #FF7E55;
   font-weight: 600;
 }
 
-.xml-actions {
-  display: flex;
-  gap: 10px;
+/* About the developer */
+.about-developer {
+  margin-top: 60px;
+  padding: 40px 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.about-developer h2 {
+  color: #333333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.about-developer p {
   margin-bottom: 15px;
 }
 
-.xml-instructions {
-  background-color: #f8f9fa;
-  border-left: 4px solid #4CAF50;
-  padding: 10px 15px;
-  margin-bottom: 15px;
-  font-size: 14px;
-}
-
-.xml-instructions ol {
-  padding-left: 20px;
-}
-
-.xml-instructions li {
-  margin-bottom: 5px;
-}
-
-.xml-instructions a {
-  color: #4CAF50;
+.about-developer a {
+  color: #FF7E55;
   text-decoration: none;
 }
 
-.xml-instructions a:hover {
+.about-developer a:hover {
   text-decoration: underline;
 }
 
-.diagram-viewer {
+/* SVG Flowchart Styles - Keep dark background for contrast */
+.svg-flowchart-container {
+  position: relative;
   width: 100%;
-  height: 700px !important;
-  margin-top: 15px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-}
-
-.diagram-viewer iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.diagram-actions {
-  margin-bottom: 15px;
-}
-
-.open-drawio-btn {
-  padding: 10px 20px;
-  background: rgba(76, 175, 80, 0.6);
-  color: white;
-  border: none;
+  margin-top: 20px;
+  overflow: hidden;
   border-radius: 8px;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  transition: all 0.3s ease;
+  background-color: #0d1117; /* Keep dark background for flowcharts */
 }
 
-.open-drawio-btn:hover {
-  background: rgba(76, 175, 80, 0.8);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+.download-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  margin-top: 30px;
 }
 
-.toggle-instructions-btn {
-  padding: 8px 12px;
-  background-color: #607D8B;
-  color: white;
+/* Keep PNG button with a different color for distinction */
+.png-download-btn {
+  background: #28a745;
+}
+
+.png-download-btn:hover {
+  background: #218838;
+}
+
+/* SVG specific styles - maintain dark theme for better contrast */
+.svg-flowchart {
+  background: #161b22;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+}
+
+/* Node styling */
+.node-start rect,
+.node-end rect {
+  rx: 20px;
+  ry: 20px;
+}
+
+.node-decision polygon {
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
 }
 
-.toggle-instructions-btn:hover {
-  background-color: #546E7A;
+.edgePath path {
+  stroke-width: 1.5px;
 }
 
-/* Enhanced Glassmorphism styles */
-.diagram-container.glassmorphism {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 
-    0 8px 32px 0 rgba(31, 38, 135, 0.15),
-    0 4px 8px 0 rgba(31, 38, 135, 0.1);
-  padding: 25px;
-  margin: 30px 0;
+.edgeLabel rect {
+  fill: #161b22;
+  opacity: 0.9;
 }
 
-.diagram-viewer.glassmorphism {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.3);
-  padding: 20px;
-  min-height: 600px;
-  overflow: hidden;
+.edgeLabel text {
+  fill: #e6edf3;
+  font-size: 12px;
 }
 
-.mermaid-diagram {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 20px 0;
-  background: rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  margin: 15px 0;
-  overflow: auto;
+/* SVG node styling for dark theme */
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon,
+.node path {
+  stroke-width: 1.5px;
 }
 
-.mermaid-diagram svg {
-  max-width: 100%;
-  height: auto !important;
-  border-radius: 4px;
+.node text {
+  fill: #e6edf3;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.edgePath path {
+  stroke: #8b949e;
+  stroke-width: 1.5px;
+}
+
+.edgeLabel rect {
+  fill: #161b22;
+  opacity: 0.9;
+}
+
+.edgeLabel text {
+  fill: #e6edf3;
+  font-size: 12px;
 }
 
 /* Style specific node types */
