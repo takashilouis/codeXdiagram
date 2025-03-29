@@ -1,0 +1,737 @@
+/* Dark Mode Aesthetic - Clean GitHub-inspired */
+body {
+  margin: 0;
+  padding: 0;
+  background: #0d1117; 
+  color: #e6edf3;
+  font-family: 'Inter', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px 30px;
+  background: transparent;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  color: #e6edf3;
+}
+
+.app-header, .input-section, .example-section, .svg-flowchart-container {
+  background: #161b22;
+  border-radius: 8px;
+  border: 1px solid #30363d;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px 15px;
+  background: transparent;
+  border: none;
+}
+
+/* Logo styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.logo {
+  margin-right: 10px;
+  filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.5));
+}
+
+.logo-text {
+  text-align: left;
+}
+
+.logo-text h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+.app-header p {
+  color: #8b949e; /* GitHub muted text */
+  margin-top: 10px;
+}
+
+.app-main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.input-section {
+  width: 100%;
+}
+
+.output-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media (min-width: 992px) {
+  .output-section {
+    flex-direction: column;
+  }
+  
+  .xml-section, .diagram-section {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .diagram-section {
+    margin-bottom: 0;
+  }
+}
+
+/* Input section */
+.input-section h2, .diagram-section h2, .example-section h2 {
+  color: #ffffff;
+  font-weight: 600;
+  font-family: 'Inter', 'Poppins', sans-serif;
+  letter-spacing: -0.5px;
+  font-size: 22px;
+}
+
+/* Code section - fix overflow */
+.code-input {
+  padding: 10px;
+  background: #161b22;
+  border-radius: 8px;
+  border: 1px solid #30363d;
+}
+
+.code-input textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  background: #0d1117;
+  font-family: 'Fira Code', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  tab-size: 2;
+  min-height: 300px;
+  color: #e6edf3;
+}
+
+/* Buttons - More subtle blue */
+.code-input button, 
+.xml-actions button, 
+.xml-actions .open-drawio-btn,
+.svg-download-btn {
+  padding: 10px 20px;
+  background: #2188ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.code-input button:hover, 
+.xml-actions button:hover, 
+.xml-actions .open-drawio-btn:hover,
+.svg-download-btn:hover {
+  background: #1c7ed6;
+  transform: translateY(-2px);
+}
+
+.code-input button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.code-input button.loading {
+  background-color: #999;
+}
+
+.xml-output {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+.xml-output pre {
+  margin: 0;
+  white-space: pre-wrap;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.xml-content {
+  max-height: 400px;
+  overflow: auto;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 15px;
+  margin-top: 15px;
+}
+
+.diagram-container {
+  padding: 20px;
+  margin: 20px 0;
+}
+
+/* Error message */
+.error-message {
+  background-color: rgba(198, 40, 40, 0.2);
+  color: #ff8a80;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border-left: 4px solid #c62828;
+}
+
+/* Footer */
+.app-footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #8b949e;
+  font-size: 14px;
+}
+
+.brand-text {
+  color: #58A6FF;
+  font-weight: 600;
+}
+
+.xml-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.xml-instructions {
+  background-color: #f8f9fa;
+  border-left: 4px solid #4CAF50;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.xml-instructions ol {
+  padding-left: 20px;
+}
+
+.xml-instructions li {
+  margin-bottom: 5px;
+}
+
+.xml-instructions a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.xml-instructions a:hover {
+  text-decoration: underline;
+}
+
+.diagram-viewer {
+  width: 100%;
+  height: 700px !important;
+  margin-top: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.diagram-viewer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.diagram-actions {
+  margin-bottom: 15px;
+}
+
+.open-drawio-btn {
+  padding: 10px 20px;
+  background: rgba(76, 175, 80, 0.6);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.open-drawio-btn:hover {
+  background: rgba(76, 175, 80, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.toggle-instructions-btn {
+  padding: 8px 12px;
+  background-color: #607D8B;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.toggle-instructions-btn:hover {
+  background-color: #546E7A;
+}
+
+/* Enhanced Glassmorphism styles */
+.diagram-container.glassmorphism {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.15),
+    0 4px 8px 0 rgba(31, 38, 135, 0.1);
+  padding: 25px;
+  margin: 30px 0;
+}
+
+.diagram-viewer.glassmorphism {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.mermaid-diagram {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin: 15px 0;
+  overflow: auto;
+}
+
+.mermaid-diagram svg {
+  max-width: 100%;
+  height: auto !important;
+  border-radius: 4px;
+}
+
+/* Style specific node types */
+.mermaid-diagram .flowchart-pointEnd,
+.mermaid-diagram .flowchart-start,
+.mermaid-diagram .flowchart-end {
+  fill: rgba(213, 232, 252, 0.8) !important;
+  stroke: #6c8ebf;
+}
+
+.mermaid-diagram .flowchart-subprocess,
+.mermaid-diagram .default {
+  fill: rgba(245, 245, 245, 0.8) !important;
+  stroke: #666666;
+}
+
+.mermaid-diagram .flowchart-diamond {
+  fill: rgba(255, 242, 204, 0.8) !important;
+  stroke: #d6b656;
+}
+
+.mermaid-diagram .edgePath .path {
+  stroke-width: 2px;
+  stroke: #333;
+}
+
+/* Interactive diagram enhancements */
+.interactive-diagram {
+  cursor: move;
+  transition: transform 0.3s ease;
+}
+
+.interactive-diagram:hover {
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.1));
+}
+
+/* Error styling for failed renders */
+.error-code {
+  background: rgba(255, 235, 235, 0.4);
+  border-radius: 4px;
+  padding: 10px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  overflow: auto;
+  max-height: 200px;
+  margin-top: 10px;
+}
+
+/* Enhanced glassmorphism buttons */
+.glassmorphism-button {
+  background: rgba(76, 175, 80, 0.6);
+  color: white;
+  border: none; 
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 
+    0 4px 16px 0 rgba(0, 0, 0, 0.1),
+    0 2px 4px 0 rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glassmorphism-button:hover {
+  background: rgba(76, 175, 80, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 20px 0 rgba(0, 0, 0, 0.15),
+    0 3px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Error message glassmorphism styling */
+.error-message.glassmorphism {
+  background: rgba(255, 235, 238, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 8px;
+  border: 1px solid rgba(198, 40, 40, 0.2);
+  padding: 20px;
+  color: #c62828;
+  box-shadow: 0 4px 15px rgba(198, 40, 40, 0.1);
+  text-align: center;
+}
+
+.error-message.glassmorphism h3 {
+  margin-top: 0;
+  color: #b71c1c;
+}
+
+/* Open in draw.io container */
+.open-drawio-container {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.drawio-viewer {
+  width: 100%;
+  height: 600px;
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.drawio-viewer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Add styles for fallback diagrams */
+.mermaid-diagram.fallback {
+  background: rgba(248, 237, 227, 0.3);
+  border: 1px dashed rgba(214, 182, 86, 0.5);
+}
+
+/* Style for the details/summary elements */
+details {
+  margin: 15px 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+summary {
+  cursor: pointer;
+  color: #555;
+  font-weight: 500;
+  user-select: none;
+}
+
+summary:hover {
+  color: #333;
+}
+
+/* Add this to your App.css */
+.example-section {
+  margin-top: 40px;
+  padding: 25px;
+  border-radius: 8px;
+  background: #21262d;
+  border: 1px solid #30363d;
+}
+
+.example-section p {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #8b949e;
+}
+
+/* ReactFlow styles */
+.flowchart-container {
+  margin: 20px 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.flow-node {
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.4;
+}
+
+.start-node, .end-node {
+  background: rgba(213, 232, 252, 0.8);
+  border: 1px solid #6c8ebf;
+  border-radius: 24px;
+}
+
+.process-node {
+  background: rgba(245, 245, 245, 0.8);
+  border: 1px solid #666666;
+}
+
+.decision-node {
+  background: rgba(255, 242, 204, 0.8);
+  border: 1px solid #d6b656;
+  transform: rotate(45deg);
+}
+
+.decision-node-label {
+  transform: rotate(-45deg);
+  display: block;
+}
+
+.io-node {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid #999;
+  border-radius: 0;
+  transform: skew(-20deg);
+}
+
+.io-node > span {
+  display: block;
+  transform: skew(20deg);
+}
+
+/* SVG Flowchart Styles */
+.svg-flowchart-container {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #0d1117;
+}
+
+.download-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  margin-top: 20px;
+}
+
+.svg-download-btn,
+.png-download-btn {
+  display: block;
+  padding: 12px 24px;
+  background: #2188ff;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.png-download-btn {
+  background: #28a745;
+}
+
+.svg-download-btn:hover {
+  background: #0366d6;
+}
+
+.png-download-btn:hover {
+  background: #22863a;
+}
+
+.svg-flowchart {
+  background: #161b22;
+  border: none;
+}
+
+/* Node styling */
+.node-start rect,
+.node-end rect {
+  rx: 20px;
+  ry: 20px;
+}
+
+.node-decision polygon {
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.edgePath path {
+  stroke-width: 1.5px;
+}
+
+.edgeLabel rect {
+  fill: #161b22;
+  opacity: 0.9;
+}
+
+.edgeLabel text {
+  fill: #e6edf3;
+  font-size: 12px;
+}
+
+/* SVG node styling for dark theme */
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon,
+.node path {
+  stroke-width: 1.5px;
+}
+
+.node text {
+  fill: #e6edf3;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.edgePath path {
+  stroke: #8b949e;
+  stroke-width: 1.5px;
+}
+
+.edgeLabel rect {
+  fill: #161b22;
+  opacity: 0.9;
+}
+
+.edgeLabel text {
+  fill: #e6edf3;
+  font-size: 12px;
+}
+
+/* Zoom controls */
+.zoom-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 100; /* Ensure controls are above the SVG */
+  background: rgba(13, 17, 23, 0.8);
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.zoom-btn {
+  background: #30363d;
+  color: #e6edf3;
+  border: none;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.zoom-btn:hover {
+  background: #3f444d;
+}
+
+/* Tabs styling */
+.tabs-container {
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #30363d;
+}
+
+.tab-button {
+  padding: 10px 16px;
+  background: transparent;
+  color: #8b949e;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tab-button:hover {
+  color: #e6edf3;
+}
+
+.tab-button.active {
+  color: #58a6ff;
+  border-bottom: 2px solid #58a6ff;
+}
+
+.tab-content {
+  padding: 15px 0;
+}
+
+/* Adding uuid dependency */ 
