@@ -37,50 +37,6 @@ CodeXDiagram is an intuitive web application that automatically generates visual
   <img src="client/src/assets/generatedFlowchart_AImode.png" alt="AI Mode Flowchart" width="400" />
 </div>
 
-## Installation
-
-### Prerequisites
-- Node.js (v14 or higher)
-- npm (v6 or higher)
-- Google Gemini API key (for AI mode)
-
-### Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/takashilouis/codeXdiagram.git
-   cd codeXdiagram
-   ```
-
-2. Install dependencies:
-   ```bash
-   # Install server dependencies
-   cd server
-   npm install
-
-   # Install client dependencies
-   cd ../client
-   npm install
-   ```
-
-3. Environment setup:
-   - Create a `.env` file in the server directory:
-     ```
-     PORT=3001
-     GOOGLE_API_KEY=your_gemini_api_key_here
-     ```
-
-4. Start the application:
-   ```bash
-   # Start the server (from server directory)
-   npm run dev
-
-   # Start the client (from client directory)
-   npm start
-   ```
-
-5. The application will be available at:
-   - Client: http://localhost:3000
-   - Server: http://localhost:3001
 
 ## Usage
 
@@ -108,6 +64,8 @@ CodeXDiagram is an intuitive web application that automatically generates visual
   - Node.js
   - Express.js
   - Google Gemini API for AI-powered analysis
+  - code2flow for flowchart generation in Normal mode
+  - esprima and esgraph for code parsing and analysis
 
 ## Contribution
 
