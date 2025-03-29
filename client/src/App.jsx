@@ -26,10 +26,13 @@ function App() {
     setError(null);
 
     try {
+      // Use environment variable for API base URL
+      const baseUrl = process.env.REACT_APP_API_URL || 'http://localhost:3001';
+      
       // Use different endpoints based on the active tab
       const endpoint = activeTab === 'normal' ? 
-        'http://localhost:3001/api/generate-normal' : 
-        'http://localhost:3001/api/generate-json';
+        `${baseUrl}/api/generate-normal` : 
+        `${baseUrl}/api/generate-json`;
       
       const response = await fetch(endpoint, {
         method: 'POST',

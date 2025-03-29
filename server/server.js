@@ -22,7 +22,13 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Middleware
-app.use(cors()); // Use default CORS settings for now
+app.use(cors({
+  origin: process.env.NODE_ENV === 'production' 
+    ? [process.env.CLIENT_URL, 'https://codexdiagram.vercel.app'] 
+    : 'http://localhost:3000',
+  methods: ['GET', 'POST'],
+  credentials: true
+}));
 app.use(express.json({ limit: '10mb' }));
 
 // Initialize Google Generative AI
